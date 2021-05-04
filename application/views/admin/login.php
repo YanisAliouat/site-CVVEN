@@ -17,7 +17,7 @@
 			<div class="form-group">
 				<input type="submit" name="submit" value="Login" class="btn btn-primary">
 			</div>
-			
+			<p>Vous Avez Deja Un Compte ? <a href="<?php echo base_url('users/login'); ?>">Se Connecter</a></p>
 		</form>
 	</div>
 </body>

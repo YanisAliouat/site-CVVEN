@@ -71,10 +71,10 @@ class Users extends CI_Controller {
                     $this->session->set_userdata('userId', $checkLogin['id']); 
                     redirect('users/account/'); 
                 }else{ 
-                    $data['error_msg'] = 'Wrong email or password, please try again.'; 
+                    $data['error_msg'] = 'Adresse e-mail ou mot de passe incorrect, veuillez réessayer.'; 
                 } 
             }else{ 
-                $data['error_msg'] = 'Please fill all the mandatory fields.'; 
+                $data['error_msg'] = 'Veuillez remplir tous les champs obligatoires.'; 
             } 
         } 
          
@@ -107,13 +107,13 @@ class Users extends CI_Controller {
             if($this->form_validation->run() == true){ 
                 $insert = $this->user->insert($userData); 
                 if($insert){ 
-                    $this->session->set_userdata('success_msg', 'Your account registration has been successful. Please login to your account.'); 
+                    $this->session->set_userdata('success_msg', 'Votre compte est creé, Veuillez vous connecter.'); 
                     redirect('users/login'); 
                 }else{ 
-                    $data['error_msg'] = 'Some problems occured, please try again.'; 
+                    $data['error_msg'] = 'Des problèmes sont survenus, veuillez réessayer.'; 
                 } 
             }else{ 
-                $data['error_msg'] = 'Please fill all the mandatory fields.'; 
+                $data['error_msg'] = 'Veuillez remplir tous les champs obligatoires.'; 
             } 
         } 
          
@@ -144,7 +144,7 @@ class Users extends CI_Controller {
         ); 
         $checkEmail = $this->user->getRows($con); 
         if($checkEmail > 0){ 
-            $this->form_validation->set_message('email_check', 'The given email already exists.'); 
+            $this->form_validation->set_message('email_check', 'Votre e-mail existe déjà.'); 
             return FALSE; 
         }else{ 
             return TRUE; 

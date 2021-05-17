@@ -112,13 +112,27 @@
 
 
     <!-- Status message -->
-    <?php
-    if (!empty($success_msg)) {
-        echo '<p class="status-msg success">' . $success_msg . '</p>';
-    } elseif (!empty($error_msg)) {
-        echo '<p class="status-msg error">' . $error_msg . '</p>';
-    }
-    ?>
+<?php
+if (!empty($success_msg)) {
+    echo '<p 
+    <style>
+    .card{ margin: 10px 50px 20px;
+           text-align: center;}
+    
+ </style>class="status-msg success">' . $success_msg . '</p>';
+} elseif (!empty($error_msg)) {
+    echo '
+    <style>
+       .card{ margin: 10px 50px 20px;
+              text-align: center;}
+       
+    </style>
+    <div class="card">
+    <div class="card-body text-danger">' . $error_msg . ' </div>
+    </div>';
+}
+?>
+
 
 
 
@@ -134,16 +148,16 @@
                 <div class="regisFrm">
                     <div class="form-group">
                         <label>Nom : </label>
-                        <input type="text" class="form-control" name="first_name" placeholder="nom" value="<?php echo !empty($user['first_name']) ? $user['first_name'] : ''; ?>" required>
-                        <?php echo form_error('first_name', '<p class="help-block">', '</p>'); ?>
+                        <input type="text" class="form-control" name="last_name" placeholder="nom" value="<?php echo !empty($user['first_name']) ? $user['last_name'] : ''; ?>" required>
+                        <?php echo form_error('last_name', '<p class="help-block">', '</p>'); ?>
                     </div>
                 </div>
                 <br>
 
                 <div class="form-group">
                     <label>Prenom&nbsp; : &nbsp;&nbsp;&nbsp;</label>
-                    <input type="text" class="form-control" name="last_name" placeholder="prenom" value="<?php echo !empty($user['last_name']) ? $user['last_name'] : ''; ?>" required>
-                    <?php echo form_error('last_name', '<p class="help-block">', '</p>'); ?>
+                    <input type="text" class="form-control" name=" first_name" placeholder="prenom" value="<?php echo !empty($user['last_name']) ? $user['first_name'] : ''; ?>" required>
+                    <?php echo form_error('first_name', '<p class="help-block">', '</p>'); ?>
                 </div>
 
                 <br>
@@ -170,33 +184,7 @@
                 </div>
                 <br>
 
-                <div class="form-group">
-                    <?php
-                    if (!empty($user['gender']) && $user['gender'] == 'Female') {
-                        $fcheck = 'checked="checked"';
-                        $mcheck = '';
-                    } else {
-                        $mcheck = 'checked="checked"';
-                        $fcheck = '';
-                    }
-                    ?>
-                    <div class="radio">
-                        <label>Sexe : &nbsp;</label>
-                        <br>
-                        <label>
-
-                            <input type="radio" name="gender" value="Male" <?php echo $mcheck; ?>>
-                            Homme
-                        </label>
-                        <label>
-                            <input type="radio" name="gender" value="Female" <?php echo $fcheck; ?>>
-                            Femme
-                        </label>
-                    </div>
-                </div>
-                <br>
-
-                <div class="form-group">
+                        <div class="form-group">
                     <label>Numéro De Téléphone : &nbsp;</label>
                     <input type="text" name="phone" class="form-control" placeholder="numéro de téléphone" value="<?php echo !empty($user['phone']) ? $user['phone'] : ''; ?>">
                     <?php echo form_error('phone', '<p class="help-block">', '</p>'); ?>
@@ -205,7 +193,7 @@
 
                 <br>
                 <div class="center">
-                    <input type="submit" class="btn btn-warning" name="signupSubmit" value="CREATE ACCOUNT">
+                    <input type="submit" class="btn btn-warning" name="signupSubmit" value="VALIDER">
                 </div>
                 <br><br>
 

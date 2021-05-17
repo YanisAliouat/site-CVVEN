@@ -28,7 +28,7 @@ class News extends CI_Controller
 	function save()
 	{
 		$this->news_model->save();
-		$this->session->set_flashdata('success','Actualités enregistrées avec succès');
+		$this->session->set_flashdata('success','Offres enregistrées avec succès');
 		redirect('admin/news/index');
 	}
 
@@ -41,14 +41,14 @@ class News extends CI_Controller
 	function update($id)
 	{
 		$this->news_model->update($id);
-		$this->session->set_flashdata('success','Actualités mises à jour avec succès');
+		$this->session->set_flashdata('success','offres mises à jour avec succès');
 		redirect('admin/news/index');
 	}
 
 	function delete($id)
 	{
 		$this->news_model->delete($id);
-		$this->session->set_flashdata('success','Actualités supprimé avec succès');
+		$this->session->set_flashdata('success','offre supprimé avec succès');
 		redirect('admin/news/index');
 	} 
 

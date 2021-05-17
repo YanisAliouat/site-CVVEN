@@ -23,21 +23,15 @@
 	      <li class="nav-item <?php if($uri=='news'){?>active<?php }?>">
 	        <a class="nav-link" href="<?php echo site_url('admin/news');?>">Nouvelles</a>
 	      </li>
-	      <li class="nav-item dropdown">
-	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	          Profile
-	        </a>
-	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="#">Parametres</a>
-	          <a class="dropdown-item" href="<?php echo site_url('admin/dashboard/logout')?>">Se Deconnecter</a>
-	          
-	        </div>
+		  <li class="nav-item <?php if($uri=='news'){?>active<?php }?>">
+	        <a class="nav-link" href="<?php echo site_url('admin/dashboard/logout')?>">Se Deconnecter</a>
 	      </li>
 	    </ul>
 	    <form class="form-inline my-2 my-lg-0" method="get" action="<?php echo site_url('admin/news/index')?>">
-	      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="keyword" value="<?php if($this->input->get('keyword'))echo $this->input->get('keyword');?>">
+	      <input class="form-control mr-sm-2" type="search" placeholder="Chercher une offre" aria-label="Search" name="keyword" value="<?php if($this->input->get('keyword'))echo $this->input->get('keyword');?>">
 	      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Chercher</button>
 	    </form>
 	  </div>
 	</nav>
 	<div class="container">
+		

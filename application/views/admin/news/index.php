@@ -1,8 +1,8 @@
 <?php
 $this->load->view('admin/header'); 
 ?>
-<h1>News</h1>
-<a href="<?php echo site_url('admin/news/add')?>" class="btn btn-info">Ajouter des nouevelles offres :</a>
+<h1>Gestions des l'espace reservation</h1>
+<a href="<?php echo site_url('admin/news/add')?>" class="btn btn-info">Ajouter des nouvelles offres </a>
 <hr>
 <?php
 if($this->session->flashdata('success'))

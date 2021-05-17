@@ -15,4 +15,29 @@
 <link href="<?php echo base_url('assets/css/style.css'); ?>" rel='stylesheet' type='text/css' />
 </head>
 <body>
-<P></P>
+
+<strong>
+  
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a class="navbar-brand" href="#">CVVEN</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url('users/accueil'); ?>">Accueil <span class="sr-only"></span></a>
+      </li>&nbsp;&nbsp;
+      <li class="nav-item">
+        <a class="nav-link"  href="<?php echo base_url('users/reservation'); ?>">Résérvation</a>
+      </li>&nbsp;&nbsp;
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url('users/account'); ?>">Profil</a>
+      </li>&nbsp;&nbsp;
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url('users/logout'); ?>" class="logout">Se Déconnecter</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</strong>

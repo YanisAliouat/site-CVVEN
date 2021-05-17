@@ -96,7 +96,6 @@ class News_model extends CI_Model
 				$arr['image'] = $uploaded['file_name'];
 				$this->resize_image(APPPATH.'../uploads/'.$arr['image'],900);
 				$this->createThumbnail(APPPATH.'../uploads/'.$arr['image'],APPPATH.'../uploads/thumbnail/'.$arr['image'],400,300);
-				//$arr['image'] = 
 			}
 		}
 		$this->db->where(array('id'=>$id));

@@ -2,14 +2,10 @@
  
 class User extends CI_Model{ 
     function __construct() { 
-        // Set table name 
         $this->table = 'users'; 
     } 
      
-    /* 
-     * Fetch user data from the database 
-     * @param array filter data based on the passed parameters 
-     */ 
+
     function getRows($params = array()){ 
         $this->db->select('*'); 
         $this->db->from($this->table); 
@@ -42,28 +38,19 @@ class User extends CI_Model{
             } 
         } 
          
-        // Return fetched data 
         return $result; 
     } 
      
-    /* 
-     * Insert user data into the database 
-     * @param $data data to be inserted 
-     */ 
+
     public function insert($data = array()) { 
         if(!empty($data)){ 
-            // Add created and modified date if not included 
             if(!array_key_exists("created", $data)){ 
                 $data['created'] = date("Y-m-d H:i:s"); 
             } 
-            if(!array_key_exists("modified", $data)){ 
-                $data['modified'] = date("Y-m-d H:i:s"); 
-            } 
+
              
-            // Insert member data 
             $insert = $this->db->insert($this->table, $data); 
              
-            // Return the status 
             return $insert?$this->db->insert_id():false; 
         } 
         return false; 

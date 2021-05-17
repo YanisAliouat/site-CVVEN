@@ -1,6 +1,7 @@
 <style>
     body {
         background-color: rgb(166, 219, 233);
+        text-align: center;
     }
 
     #container {
@@ -53,7 +54,7 @@
     }
 
 
-    .center{
+    .center {
         text-align: center;
     }
 </style>
@@ -61,23 +62,35 @@
 <!-- Status message -->
 <?php
 if (!empty($success_msg)) {
-    echo '<p class="status-msg success">' . $success_msg . '</p>';
+    echo '<p 
+    <style>
+    .card{ margin: 10px 50px 20px;
+           text-align: center;}
+    
+ </style>class="status-msg success">' . $success_msg . '</p>';
 } elseif (!empty($error_msg)) {
-    echo '<p class="status-msg error">' . $error_msg . '</p>';
+    echo '
+    <style>
+       .card{ margin: 10px 50px 20px;
+              text-align: center;}
+       
+    </style>
+    <div class="card">
+    <div class="card-body text-danger">' . $error_msg . ' </div>
+    </div>';
 }
 ?>
-
-
 
 
 <div id="container">
     <!-- zone de connexion -->
 
+
     <form action="" method="POST">
         <div class="center"><h1>Connexion</h1></div>
         
-
-        <label><b>Nom d'utilisateur</b></label>
+<br> 
+        <label><b>E-Mail</b></label>
         <div class="form-group">
             <input type="email" name="email" placeholder="Email" required="">
             <?php echo form_error('email', '<p class="help-block">', '</p>'); ?>
@@ -88,10 +101,14 @@ if (!empty($success_msg)) {
             <input type="password" name="password" placeholder="PASSWORD" required="">
             <?php echo form_error('password', '<p class="help-block">', '</p>'); ?>
         </div>
-
+<br>
         <input type="submit" name="loginSubmit" value="LOGIN">
 <br><br>
         <p>Vous n'avez pas de compte ?  &nbsp;&nbsp;<a href="<?php echo base_url('users/registration'); ?>" class="btn btn-info">&nbsp;&nbsp; S'inscrire&nbsp;&nbsp;</a></p>
 
     </form>
+
+
+
+
 </div>

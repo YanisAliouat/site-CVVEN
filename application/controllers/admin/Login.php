@@ -9,11 +9,12 @@ class Login extends CI_Controller
 	}
 	function index()
 	{
+		
 		$this->load->view('admin/login');
 	}
 	function verify()
 	{
-		//username:admin password:123456
+		// rediriger vers dashboard : tableau de bord : accueil
 		$this->load->model('admin');
 		$check = $this->admin->validate();
 		if($check)
@@ -26,4 +27,7 @@ class Login extends CI_Controller
 			redirect('admin');
 		}
 	}
-}
+}		
+
+
+//username:admin password:123456

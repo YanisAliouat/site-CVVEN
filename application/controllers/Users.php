@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); 
  
 class Users extends CI_Controller { 
@@ -5,11 +16,9 @@ class Users extends CI_Controller {
     function __construct() { 
         parent::__construct(); 
          
-        // Load form validation ibrary & user model 
         $this->load->library('form_validation'); 
         $this->load->model('user'); 
          
-        // User login status 
         $this->isUserLoggedIn = $this->session->userdata('isUserLoggedIn'); 
     } 
      
@@ -20,7 +29,14 @@ class Users extends CI_Controller {
             redirect('users/login'); 
         } 
     } 
- 
+     public function accueil(){ 
+        $data = array(); 
+            $this->load->view('elements/header', $data); 
+            $this->load->view('users/accueil', $data); 
+            $this->load->view('elements/footer'); 
+   
+    } 
+
     public function account(){ 
         $data = array(); 
         if($this->isUserLoggedIn){ 
@@ -29,9 +45,27 @@ class Users extends CI_Controller {
             ); 
             $data['user'] = $this->user->getRows($con); 
              
-            // Pass the user data and load view 
+            
             $this->load->view('elements/header', $data); 
             $this->load->view('users/account', $data); 
+            $this->load->view('elements/footer'); 
+        }else{ 
+            redirect('users/login'); 
+        } 
+    } 
+
+
+    public function reservation(){ 
+        $data = array(); 
+        if($this->isUserLoggedIn){ 
+            $con = array( 
+                'id' => $this->session->userdata('userId') 
+            ); 
+            $data['user'] = $this->user->getRows($con); 
+             
+            
+            $this->load->view('elements/header', $data); 
+            $this->load->view('users/reservation', $data); 
             $this->load->view('elements/footer'); 
         }else{ 
             redirect('users/login'); 
@@ -41,7 +75,7 @@ class Users extends CI_Controller {
     public function login(){ 
         $data = array(); 
          
-        // Get messages from the session 
+        
         if($this->session->userdata('success_msg')){ 
             $data['success_msg'] = $this->session->userdata('success_msg'); 
             $this->session->unset_userdata('success_msg'); 
@@ -51,8 +85,7 @@ class Users extends CI_Controller {
             $this->session->unset_userdata('error_msg'); 
         } 
          
-        // If login request submitted 
-        if($this->input->post('loginSubmit')){ 
+                if($this->input->post('loginSubmit')){ 
             $this->form_validation->set_rules('email', 'Email', 'required|valid_email'); 
             $this->form_validation->set_rules('password', 'password', 'required'); 
              
@@ -61,8 +94,7 @@ class Users extends CI_Controller {
                     'returnType' => 'single', 
                     'conditions' => array( 
                         'email'=> $this->input->post('email'), 
-                        'password' => md5($this->input->post('password')), 
-                        'status' => 1 
+                        'password' => md5($this->input->post('password'))
                     ) 
                 ); 
                 $checkLogin = $this->user->getRows($con); 
@@ -72,13 +104,12 @@ class Users extends CI_Controller {
                     redirect('users/account/'); 
                 }else{ 
                     $data['error_msg'] = 'Adresse e-mail ou mot de passe incorrect, veuillez réessayer.'; 
+                    
                 } 
             }else{ 
                 $data['error_msg'] = 'Veuillez remplir tous les champs obligatoires.'; 
             } 
         } 
-         
-        // Load view 
         $this->load->view('elements/header', $data); 
         $this->load->view('users/login', $data); 
         $this->load->view('elements/footer'); 
@@ -87,7 +118,7 @@ class Users extends CI_Controller {
     public function registration(){ 
         $data = $userData = array(); 
          
-        // If registration request is submitted 
+       
         if($this->input->post('signupSubmit')){ 
             $this->form_validation->set_rules('first_name', 'First Name', 'required'); 
             $this->form_validation->set_rules('last_name', 'Last Name', 'required'); 
@@ -100,7 +131,6 @@ class Users extends CI_Controller {
                 'last_name' => strip_tags($this->input->post('last_name')), 
                 'email' => strip_tags($this->input->post('email')), 
                 'password' => md5($this->input->post('password')), 
-                'gender' => $this->input->post('gender'), 
                 'phone' => strip_tags($this->input->post('phone')) 
             ); 
  
@@ -113,14 +143,12 @@ class Users extends CI_Controller {
                     $data['error_msg'] = 'Des problèmes sont survenus, veuillez réessayer.'; 
                 } 
             }else{ 
-                $data['error_msg'] = 'Veuillez remplir tous les champs obligatoires.'; 
+                $data['error_msg'] = 'Des problèmes sont survenus, veuillez réessayer.'; 
             } 
         } 
          
-        // Posted data 
+       
         $data['user'] = $userData; 
-         
-        // Load view 
         $this->load->view('elements/header', $data); 
         $this->load->view('users/registration', $data); 
         $this->load->view('elements/footer'); 
@@ -134,7 +162,7 @@ class Users extends CI_Controller {
     } 
      
      
-    // Existing email check during validation 
+    // verifier les email 
     public function email_check($str){ 
         $con = array( 
             'returnType' => 'count', 
@@ -151,3 +179,7 @@ class Users extends CI_Controller {
         } 
     } 
 }
+
+?>
+</body>
+</html>

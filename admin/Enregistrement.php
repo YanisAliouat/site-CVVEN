@@ -57,7 +57,7 @@
 							<th>Type de chambre</th>
 							<th>Numero de chambre</th>
 							<th>Enregistrement</th>
-							<th>Date</th>
+							<th>Nombre de jours de votre séjours</th>
 							<th>Paiementt</th>
 							<th>Status</th>
 							<th>Lit extra</th>

@@ -51,15 +51,15 @@
 							<label>chambre Type </label>
 							<select class = "form-control" required = required name = "chambre_type">
 								<option value = "">Choisir une option</option>
-								<option value = "Standard" <?php if($fetch['chambre_type'] == "Standard"){echo "selected";}?>>Standard</option>
-								<option value = "Superior" <?php if($fetch['chambre_type'] == "Superior"){echo "selected";}?>>Superior</option>
-								<option value = "Super Deluxe" <?php if($fetch['chambre_type'] == "Super Deluxe"){echo "selected";}?>>Super Deluxe</option>
-								<option value = "Jr. Suite" <?php if($fetch['chambre_type'] == "Jr. Suite"){echo "selected";}?>>Jr. Suite</option>
-								<option value = "Executive Suite" <?php if($fetch['chambre_type'] == "Executive Suite"){echo "selected";}?>>Executive Suite</option>
+								<option value = "Standard" <?php if($fetch['chambre_type'] == "Standard"){echo "selected";}?>>Les Rousses - Jura</option>
+								<option value = "Superior" <?php if($fetch['chambre_type'] == "Superior"){echo "selected";}?>>Villefort - Lozere</option>
+								<option value = "Super Deluxe" <?php if($fetch['chambre_type'] == "Super Deluxe"){echo "selected";}?>>Saint-Antheme - Puy de Dome</option>
+								<option value = "Jr. Suite" <?php if($fetch['chambre_type'] == "Jr. Suite"){echo "selected";}?>>La Rochelle - Charente-Maritime</option>
+								<option value = "Executive Suite" <?php if($fetch['chambre_type'] == "Executive Suite"){echo "selected";}?>>Crous de Champs Deluxe</option>
 							</select>
 						</div>
 						<div class = "form-group">
-							<label>Price </label>
+							<label>Prix </label>
 							<input type = "number" min = "0" max = "999999999" value = "<?php echo $fetch['prix']?>" class = "form-control" name = "prix" />
 						</div>
 						<div class = "form-group">

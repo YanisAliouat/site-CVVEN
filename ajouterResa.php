@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang = "en">
 	<head>
-		<title>Hotel Online Reservation</title>
+		<title>CVVEN</title>
 		<meta charset = "utf-8" />
 		<meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
 		<link rel = "stylesheet" type = "text/css" href = "css/bootstrap.css " />
@@ -16,7 +16,7 @@
 		</div>
 	</nav>	
 	<ul id = "menu">
-		<li><a href = "index.php">Accueil</a></li> |
+		<li><a href = "accueil.php">Accueil</a></li> |
 		<li><a href = "Apropos.php">A propos de nous</a></li> |
 		<li><a href = "contacts.php">Contact</a></li> |			
 		<li><a href = "reservation.php">Faire une réservation</a></li> |
@@ -49,7 +49,7 @@
 							<input type = "text" class = "form-control" name = "Prenom" required = "required" />
 						</div>
 						<div class = "form-group">
-							<label>Nom</label>
+							<label>Nom d'usage</label>
 							<input type = "text" class = "form-control" name = "Deuxieme_prenom" required = "required" />
 						</div>
 						<div class = "form-group">
@@ -63,10 +63,14 @@
 						<div class = "form-group">
 							<label>Numero</label>
 							<input type = "text" class = "form-control" name = "numero_tel" required = "required" />
-						</div
+						</div>
 						<div class = "form-group">
-							<label>Vos dates</label>
-							<input type = "date" class = "form-control" name = "date" required = "required" />
+							<label>Date de debut</label>
+							<input type = "date" class = "form-control" name = "dateDebut" required = "required" />
+						</div>
+						<div class = "form-group">
+							<label>Date de fin</label>
+							<input type = "date" class = "form-control" name = "dateFin" required = "required" />
 						</div>
 						<br />
 						<div class = "form-group">

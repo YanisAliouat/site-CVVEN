@@ -16,27 +16,28 @@
 		</div>
 	</nav>	
 	<ul id = "menu">
-		<li><a href = "index.php">Accueil</a></li> |
+		<li><a href = "accueil.php">Accueil</a></li> |
 		<li><a href = "Apropos.php">A propos de nous</a></li> |
 		<li><a href = "contact.php">Nous contacter</a></li> ||			
 		<li><a href = "reservation.php">Faire une réservation</a></li> |
 		
 	</ul>
 	<div style = "margin-left:0;" class = "container">
-		<div class = "panel panel-default">
-			<div class = "panel-body">
-				<strong><h3>Nous contacter</h3></strong>
-				<br />
-				<br />
-				<center><img src = "images/hotel.jpg" width = "300" height = "300" /></center>
-				<br />
-				<br />
-				<center>
-				<p>Contact : </p>
-				<p>Email: </p>
-				</center>
-			</div>
-		</div>
+        <div class = "panel panel-default">
+            <div class = "panel-body">
+                <strong><h3>Nous contacter</h3></strong>
+                <br />
+                <br />
+                <center><img src = "images/hotel.jpg" width = "300" height = "300" /></center>
+                <br />
+                <br />
+                <center>
+                <p>Telephone : 0635927112 </p>
+                <p>Email : yanis.aliouat1@gmail.com / noah.grenier@gmail.com / ahouripaul@gmail.com / yani.haouili1@gmail.com </p>
+                </center>
+            </div>
+        </div>
+    </div>
 	</div>
 	<br />
 	<br />

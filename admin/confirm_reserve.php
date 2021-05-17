@@ -74,7 +74,7 @@
 						<input type = "number" min = "0" max = "999" name = "chambre_no" class = "form-control" required = "required"/>
 					</div>
 					<div class = "form-inline" style = "float:left; margin-left:20px;">
-						<label>Date</label>
+						<label>Nombre de jours de séjours</label>
 						<br />
 						<input type = "number" min = "0" max = "99" name = "date" class = "form-control" required = "required"/>
 					</div>

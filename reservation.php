@@ -16,7 +16,7 @@
 		</div>
 	</nav>	
 	<ul id = "menu">
-		<li><a href = "index.php">Accueil</a></li> |
+		<li><a href = "accueil.php">Accueil</a></li> |
 		<li><a href = "Apropos.php">A propos de nous</a></li> |
 		<li><a href = "contact.php">Nos portfolio</a></li> | |			
 		<li><a href = "reservation.php">Faire une réservation</a></li> |

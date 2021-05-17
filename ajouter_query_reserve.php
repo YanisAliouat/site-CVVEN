@@ -6,7 +6,7 @@
 		$nom = $_POST['nom'];
 		$adresse = $_POST['adresse'];
 		$numero_tel = $_POST['numero_tel'];
-		$enregistrement = $_POST['date'];
+		$enregistrement = $_POST['dateDebut'];
 		$conn->query("INSERT INTO `client` (Prenom, Deuxieme_prenom, nom, adresse, numero_tel) VALUES('$Prenom', '$Deuxieme_prenom', '$nom', '$adresse', '$numero_tel')") or die(mysqli_error());
 		$query = $conn->query("SELECT * FROM `client` WHERE `Prenom` = '$Prenom' && `nom` = '$nom' && `numero_tel` = '$numero_tel'") or die(mysqli_error());
 		$fetch = $query->fetch_array();
